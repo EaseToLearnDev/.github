@@ -67,13 +67,3 @@ body:
     validations:
       required: false
 
-  - type: checkboxes
-    id: definition_of_ready
-    attributes:
-      label: Definition of Ready (DoR)
-      options:
-        - label: Functional spec and edge cases reviewed with tech lead / engineering
-        - label: UI/UX assets linked and aligned with design system (if applicable)
-        - label: Non-goals and scope boundaries explicitly agreed upon
-    validations:
-      required: true
