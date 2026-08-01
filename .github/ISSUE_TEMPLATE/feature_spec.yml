@@ -1,0 +1,25 @@
+name: Feature Request / Spec
+description: Detailed functional spec document for a concrete product feature
+title: "[FEATURE]: "
+type: Feature                          # Sets native issue type to "Feature"
+projects: ["EaseToLearnDev/3"]        # Replace '1' with your Product Hub project number
+body:
+  - type: input
+    id: parent_initiative
+    attributes:
+      label: Driving Initiative
+      placeholder: "Paste link or #issue-number of parent Initiative"
+    validations:
+      required: true
+  - type: textarea
+    id: executive_summary
+    attributes:
+      label: Executive Summary & Rationale
+    validations:
+      required: true
+  - type: textarea
+    id: functional_spec
+    attributes:
+      label: Functional Specification & Behavior
+    validations:
+      required: true
