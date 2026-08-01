@@ -4,31 +4,6 @@ title: "[BUG]: "
 type: Bug
 projects: ["EaseToLearnDev/26"]
 body:
-  - type: dropdown
-    id: environment
-    attributes:
-      label: Environment
-      description: Where was this bug encountered?
-      options:
-        - Production
-        - Staging
-        - Local / QA Environment
-    validations:
-      required: true
-
-  - type: dropdown
-    id: severity
-    attributes:
-      label: Severity & Operational Impact
-      description: How severely does this bug affect users or system stability?
-      options:
-        - Critical (System Outage / Data Loss / Blocker)
-        - High (Core Feature Broken - No Workaround)
-        - Medium (Feature Broken - Workaround Available)
-        - Low (Cosmetic / Minor UI Glitch)
-    validations:
-      required: true
-
   - type: textarea
     id: behavior
     attributes:
