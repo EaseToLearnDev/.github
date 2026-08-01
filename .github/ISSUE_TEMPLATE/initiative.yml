@@ -1,0 +1,58 @@
+name: Initiative
+description: Define an outcome-driven strategic initiative with target business metrics
+title: "[INITIATIVE]: "
+labels: ["initiative", "product-hub"]
+body:
+  - type: dropdown
+    id: domain_area
+    attributes:
+      label: Strategic Domain
+      description: Which primary pillar does this initiative move the needle on?
+      options:
+        - Monetization & Subscriptions
+        - Retention & Engagement
+        - User Acquisition & Onboarding
+        - Performance & Infrastructure
+        - Core User Experience
+    validations:
+      required: true
+
+  - type: textarea
+    id: strategic_context
+    attributes:
+      label: Context & Observed Problem Statement
+      description: What data, user feedback, or market trend triggered this? (e.g., "Observed a 12% drop in conversion at the checkout step during Q2")
+      placeholder: "Describe the underlying reason, current baseline data, and why this is a priority now..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_metrics
+    attributes:
+      label: Measurable Outcome & Key Results (KPIs)
+      description: What exact metric defines success for this initiative?
+      placeholder: |
+        - Improve subscription conversion rate by +40 bps
+        - Reduce onboarding drop-off from 25% to 10%
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Out of Scope / Non-Goals
+      description: What are explicitly NOT trying to solve in this initiative to prevent scope creep?
+      placeholder: "e.g., We are not redesigning the payment gateway interface in this phase."
+
+  - type: dropdown
+    id: target_horizon
+    attributes:
+      label: Target Horizon
+      options:
+        - Q1
+        - Q2
+        - Q3
+        - Q4
+        - Ongoing / Strategic
+    validations:
+      required: true
