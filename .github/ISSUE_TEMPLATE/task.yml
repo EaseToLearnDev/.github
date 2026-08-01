@@ -1,0 +1,55 @@
+name: Task
+description: Track technical, infrastructure, or implementation work
+title: "[TASK]: "
+type: Task
+projects: ["EaseToLearnDev/26"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: 1. Core Objective & Context
+      description: Describe what needs to be done and why. Keep the issue title short (under 10 words) and put full technical context here.
+      placeholder: |
+        e.g.,
+        Refactor user authentication middleware to support JWT refresh token rotation for enhanced session security.
+    validations:
+      required: true
+
+  - type: textarea
+    id: execution_plan
+    attributes:
+      label: 2. Technical Execution Plan & Scope
+      description: Detail specific implementation steps, APIs/files affected, or technical specs.
+      placeholder: |
+        ### Implementation Steps:
+        1. Update `auth-service` handler to emit refresh token cookies.
+        2. Add token rotation endpoint `/api/v1/auth/refresh`.
+        3. Update API Gateway route validation middleware.
+    validations:
+      required: true
+
+  - type: textarea
+    id: execution_resources
+    attributes:
+      label: 3. Execution Resources & Guides (Optional)
+      description: Attach relevant technical documentation, API specifications, tutorials, or architectural walkthroughs needed to execute this task. (Do NOT paste parent issue links—use GitHub native sub-issues instead).
+      placeholder: |
+        - Library Doc: https://org.github.io/docs/jwt-rotation
+        - RFC Walkthrough: https://tools.ietf.org/html/rfc7519
+        - Internal Tech Specs: https://wiki.easetolearn.com/arch/auth-v2
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: task_dod
+    attributes:
+      label: Task Definition of Done (DoD)
+      description: Complete all local testing and sanity gates before marking this task complete.
+      options:
+        - label: "Implementation complete and adheres to team coding standards"
+        - label: "Unit / Integration tests written and passing"
+        - label: "Peer code review completed and approved"
+        - label: "Isolated testing passed on Dev Environment"
+        - label: "Design Sanity Check passed on Dev Environment (if UI task)"
+    validations:
+      required: true

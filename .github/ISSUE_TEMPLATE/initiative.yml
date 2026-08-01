@@ -4,20 +4,6 @@ title: "[INITIATIVE]: "
 type: Initiative
 projects: ["EaseToLearnDev/3"]
 body:
-  - type: dropdown
-    id: domain_area
-    attributes:
-      label: Strategic Domain
-      description: Which primary pillar does this initiative move the needle on?
-      options:
-        - Monetization & Subscriptions
-        - Retention & Engagement
-        - User Acquisition & Onboarding
-        - Performance & Infrastructure
-        - Core User Experience
-    validations:
-      required: true
-
   - type: textarea
     id: strategic_context
     attributes:

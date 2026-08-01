@@ -1,0 +1,91 @@
+name: Bug Report
+description: Report an application defect, broken flow, or unexpected failure
+title: "[BUG]: "
+type: Bug
+projects: ["EaseToLearnDev/26"]
+body:
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where was this bug encountered?
+      options:
+        - Production
+        - Staging
+        - Local / QA Environment
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity & Operational Impact
+      description: How severely does this bug affect users or system stability?
+      options:
+        - Critical (System Outage / Data Loss / Blocker)
+        - High (Core Feature Broken - No Workaround)
+        - Medium (Feature Broken - Workaround Available)
+        - Low (Cosmetic / Minor UI Glitch)
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 1. Current vs. Expected Behavior
+      description: What is happening right now, and what SHOULD happen instead?
+      placeholder: |
+        - **Current Behavior:** Clicking 'Submit Payment' results in an infinite loading spinner and 500 error.
+        - **Expected Behavior:** Transaction processes and user is redirected to the confirmation screen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: 2. Steps to Reproduce
+      description: Exact numbered steps to consistently recreate the bug.
+      placeholder: |
+        1. Log in as a student user on Staging.
+        2. Navigate to 'Course Checkout'.
+        3. Enter test credit card details and click 'Submit Payment'.
+        4. Observe infinite loading state.
+    validations:
+      required: true
+
+  - type: textarea
+    id: visual_evidence
+    attributes:
+      label: 3. Visual Evidence (Mandatory)
+      description: Drag and drop screenshots/GIFs here, OR paste a Loom screen recording URL. (If backend-only, state "N/A - Backend API").
+      placeholder: |
+        [Drag and drop image/screenshot files directly here]
+
+        or Loom link: https://www.loom.com/share/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs_and_payload
+    attributes:
+      label: 4. Console Logs / Network Errors (Optional)
+      description: Paste browser console errors, API response error payloads, or backend stack traces.
+      placeholder: |
+        ```json
+        {
+          "status": 500,
+          "error": "Internal Server Error",
+          "message": "NullPointerException at PaymentProcessor.java:42"
+        }
+        ```
+    validations:
+      required: false
+
+  - type: input
+    id: user_context
+    attributes:
+      label: 5. User / Device Context (Optional)
+      description: User ID, Account Role, Browser, OS, or Device details if relevant.
+      placeholder: "e.g., User ID: 89421 | Chrome v122 on macOS"
+    validations:
+      required: false

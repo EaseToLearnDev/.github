@@ -67,3 +67,28 @@ body:
     validations:
       required: false
 
+  - type: checkboxes
+    id: handoff_signoff
+    attributes:
+      label: Handoff Sign-off (Product, Engineering & QA Alignment)
+      description: Conduct the Handoff Meeting. Complete all questions, clarify gaps, and check off these items ONCE ALL TEAMS ALIGN before work begins.
+      options:
+        - label: "Handoff meeting conducted with Product, Engineering, and QA"
+        - label: "Functional scope, in-scope requirements, and explicit non-goals reviewed & agreed upon"
+        - label: "UI/UX assets and edge-case design states (Loading, Error, Empty) reviewed in Figma"
+        - label: "Engineering & QA confirmed zero blocking questions or unaddressed technical gaps remaining"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: feature_dod
+    attributes:
+      label: Feature Definition of Done (DoD) - Release & Ship
+      description: Final release gates required before closing this feature.
+      options:
+        - label: "All child tasks completed and merged"
+        - label: "End-to-end testing verified on UAT Environment"
+        - label: "End-to-end Design Sanity Check passed on UAT"
+        - label: "Feature shipped / released to Production Live"
+    validations:
+      required: false
