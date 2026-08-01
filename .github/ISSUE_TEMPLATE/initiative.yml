@@ -1,7 +1,8 @@
 name: Initiative
 description: Define an outcome-driven strategic initiative with target business metrics
 title: "[INITIATIVE]: "
-labels: ["initiative", "product-hub"]
+type: Initiative
+projects: ["EaseToLearnDev/3"]
 body:
   - type: dropdown
     id: domain_area
@@ -21,8 +22,8 @@ body:
     id: strategic_context
     attributes:
       label: Context & Observed Problem Statement
-      description: What data, user feedback, or market trend triggered this? (e.g., "Observed a 12% drop in conversion at the checkout step during Q2")
-      placeholder: "Describe the underlying reason, current baseline data, and why this is a priority now..."
+      description: What data, user feedback, or market trend triggered this?
+      placeholder: "Describe the underlying reason, current baseline data, and why this is a priority now. For example: Observed a 12% drop in conversion at the checkout step during Q2)"
     validations:
       required: true
 
@@ -42,17 +43,5 @@ body:
     attributes:
       label: Out of Scope / Non-Goals
       description: What are explicitly NOT trying to solve in this initiative to prevent scope creep?
-      placeholder: "e.g., We are not redesigning the payment gateway interface in this phase."
+      placeholder: "We are not redesigning the payment gateway interface in this phase."
 
-  - type: dropdown
-    id: target_horizon
-    attributes:
-      label: Target Horizon
-      options:
-        - Q1
-        - Q2
-        - Q3
-        - Q4
-        - Ongoing / Strategic
-    validations:
-      required: true
