@@ -1,25 +1,79 @@
 name: Feature Request / Spec
 description: Detailed functional spec document for a concrete product feature
 title: "[FEATURE]: "
-type: Feature                          # Sets native issue type to "Feature"
-projects: ["EaseToLearnDev/3"]        # Replace '1' with your Product Hub project number
+type: Feature
+projects: ["EaseToLearnDev/3"]
 body:
+  - type: textarea
+    id: scope_in
+    attributes:
+      label: 1. What Needs To Be Done (In-Scope)
+      description: Describe the primary functional objective and core deliverable. What capability are we introducing?
+      placeholder: |
+        e.g.,
+        - Implement an 'Upgrade Plan' modal on the student test dashboard when freemium users exhaust their monthly limit.
+        - Add a real-time coupon code validation step during checkout.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope_out
+    attributes:
+      label: 2. What DOES NOT Need To Be Done (Explicit Non-Goals)
+      description: Explicitly list out-of-scope items to prevent scope creep during engineering execution.
+      placeholder: |
+        e.g.,
+        - We are NOT modifying the existing annual subscription pricing logic.
+        - Mobile web responsive adjustments will be handled in Phase 2; desktop only for this release.
+        - No backend changes required for the payment gateway.
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_behavior
+    attributes:
+      label: 3. Functional Behavior & Edge Cases
+      description: Detail step-by-step user interactions, system state transitions, error handling, and boundary conditions.
+      placeholder: |
+        ### User Flow:
+        1. User clicks on "Attempt Practice Test" after limit is reached.
+        2. System interrupts and opens the upgrade modal with pre-selected 'Pro Plan'.
+        3. User clicks 'Apply Coupon' -> system sends request to GET /api/v1/coupons/validate.
+
+        ### Edge Cases & Error Handling:
+        - If API fails to validate coupon within 3s -> Show inline toast: "Unable to verify coupon, please try again."
+        - If user abandons payment -> Retain modal state without resetting inputs.
+    validations:
+      required: true
+
   - type: input
-    id: parent_initiative
+    id: figma_link
     attributes:
-      label: Driving Initiative
-      placeholder: "Paste link or #issue-number of parent Initiative"
+      label: 4. Figma / Design File Link (Optional)
+      description: Paste the direct URL to the Figma frame, wireframes, or prototype UI assets.
+      placeholder: "https://www.figma.com/file/..."
     validations:
-      required: true
+      required: false
+
   - type: textarea
-    id: executive_summary
+    id: resources_list
     attributes:
-      label: Executive Summary & Rationale
+      label: 5. Resources & References (Optional)
+      description: List any supporting research papers, internal docs, API specifications, or reference benchmarks.
+      placeholder: |
+        - API Spec Doc: https://docs.easetolearn.com/api/coupons
+        - Benchmark Reference: Stripe Checkout coupon interaction pattern
+        - Internal Research: Q2 Retention Analysis PDF
     validations:
-      required: true
-  - type: textarea
-    id: functional_spec
+      required: false
+
+  - type: checkboxes
+    id: definition_of_ready
     attributes:
-      label: Functional Specification & Behavior
+      label: Definition of Ready (DoR)
+      options:
+        - label: Functional spec and edge cases reviewed with tech lead / engineering
+        - label: UI/UX assets linked and aligned with design system (if applicable)
+        - label: Non-goals and scope boundaries explicitly agreed upon
     validations:
       required: true
